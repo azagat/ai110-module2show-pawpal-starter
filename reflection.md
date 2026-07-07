@@ -2,6 +2,11 @@
 
 ## 1. System Design
 
+Three core actions:
+1) Add a pet
+2) Create future tasks
+3) Edit or delete current tasks
+
 **a. Initial design**
 
 - Briefly describe your initial UML design.
