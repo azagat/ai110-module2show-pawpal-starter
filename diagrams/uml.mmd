@@ -6,6 +6,7 @@ classDiagram
         +int age
         +list~Pet~ pets
         +add_pet(pet) None
+        +all_tasks() list~Task~
     }
 
     class Pet {
@@ -16,6 +17,7 @@ classDiagram
         +str preferred_food
         +list~Medication~ medications
         +add_medication(med) None
+        +generate_tasks() list~Task~
     }
 
     class Medication {
@@ -34,6 +36,9 @@ classDiagram
         +bool is_flexible
         +Pet pet
         +Owner owner
+        +bool completed
+        +is_fixed() bool
+        +mark_complete() None
     }
 
     class Priority {

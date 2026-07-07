@@ -11,11 +11,13 @@ Three core actions:
 
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
+<br>My initial UML design included the Owner, Pet, and Task class. Each class included the name, as well as more specialized info such as pets (for the owner class), species (for the pet class), and priority (for the task class).
 
 **b. Design changes**
 
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
+<br>Yes. I originally only included the Owner, Pet, and Task classes. After brainstorming with the AI, I realized I had to add more classes and info to fully encapsulate the capabilities of the app. One class that I added was "Medication."
 
 ---
 

@@ -67,7 +67,17 @@ pytest --cov
 Sample test output:
 
 ```
-# Paste your pytest output here
+============================================
+Today's Schedule for Jordan
+(pets: Mochi, Biscuit)
+============================================
+Planned tasks:
+  08:00–08:30 — Morning walk for Mochi [high] — pinned to 08:00
+  08:30–09:00 — Grooming for Biscuit [low] — low priority, placed in earliest open slot
+  09:00–09:10 — Breakfast for Biscuit [high] — pinned to 09:00
+  09:10–09:55 — Afternoon play for Mochi [medium] — medium priority, placed in earliest open slot
+  10:00–10:15 — Litter box cleanup for Biscuit [medium] — pinned to 10:00
+============================================
 ```
 
 ## 📐 Smarter Scheduling
