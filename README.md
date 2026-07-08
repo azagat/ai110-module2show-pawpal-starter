@@ -47,11 +47,7 @@ pip install -r requirements.txt
 Paste a sample of your app's CLI or Streamlit output here so a reader can see what a generated plan looks like:
 
 ```
-# e.g.:
-# Daily plan for Biscuit (Golden Retriever):
-#   08:00 — Morning walk (30 min) [priority: high]
-#   09:00 — Feeding (10 min) [priority: high]
-#   ...
+Planned tasks: 08:00–08:20 — Morning walk (Mochi) for Mochi [high] — pinned to 08:00 10:00–10:10 — Medication for Snow [high] — pinned to 10:00 16:00–16:20 — Bath for Mochi for Mochi [medium] — pinned to 16:00Could not schedule: — Morning walk (Snow) [high, 20 min] — time conflict at 08:00 with an earlier pinned task
 ```
 
 ## 🧪 Testing PawPal+
@@ -80,6 +76,12 @@ Planned tasks:
 ============================================
 ```
 
+Sample pytest output:
+
+```
+==================================== 13 passed in 0.02s ====================================
+```
+
 ## 📐 Smarter Scheduling
 
 > Fill in once you've implemented scheduling logic.
@@ -95,10 +97,10 @@ Planned tasks:
 
 Describe your app in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. Input user name
+2. Input pet name(s) ("Snow, dog" and "Ralph, dog")
+3. Add morning walk for Snow at 8:00 daily, add afternoon walk for Ralph at a later time (12:00) - add tasks 
+4. Update Snow's morning walk to done
+5. Filter by status, put done (should show Snow's walk)
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
