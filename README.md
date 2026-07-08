@@ -88,10 +88,10 @@ Sample pytest output:
 
 | Feature | Method(s) | Notes |
 |---------|-----------|-------|
-| Task sorting | | e.g., by priority, duration |
-| Filtering | | e.g., skip tasks if time runs out |
-| Conflict handling | | e.g., overlapping time slots |
-| Recurring tasks | | e.g., daily vs. weekly |
+| Task sorting | `sort_tasks(tasks, by="time")`, `Scheduler.build_plan` | Current-tasks list is shown earliest-pinned first, unpinned tasks last; the scheduler also orders flexible tasks by priority (high→low) then longest-first. |
+| Filtering | `filter_tasks(tasks, pet=, status=, priority=, on_date=)`, `Owner.tasks_for` | App has "Filter by pet" and "Filter by status" dropdowns; a Done/Skip/Reset control changes a task's `TaskStatus` (pending/done/skipped) so only pending tasks get scheduled. |
+| Conflict handling | `detect_conflicts(tasks)`, `Scheduler._overlaps` | Overlapping pinned tasks are flagged before scheduling via `Conflict.describe()`; unschedulable tasks report *why* (outside window vs. time conflict vs. no open slot). |
+| Recurring tasks | `Task.occurs_on(date)`, `Recurrence` (`NONE`/`DAILY`/`WEEKLY`/`EVERY_N_DAYS`) | Task form sets a repeat rule, `Starts on` anchor date, and `Every N days` interval; the "Plan for" date filters tasks to only those occurring that day. |
 
 ## 📸 Demo Walkthrough
 
