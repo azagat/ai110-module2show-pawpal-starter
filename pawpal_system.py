@@ -87,14 +87,27 @@ class Pet:
     age: int = 0
     preferred_food: str = ""
     medications: list[Medication] = field(default_factory=list)
+    tasks: list["Task"] = field(default_factory=list)
 
     def add_medication(self, med: Medication) -> None:
         """Register a medication this pet needs."""
         self.medications.append(med)
 
+    def add_task(self, task: "Task") -> None:
+        """Attach a care task directly to this pet."""
+        task.pet = self
+        self.tasks.append(task)
+
     def generate_tasks(self) -> list["Task"]:
-        """All medication tasks for this pet, each linked back to the pet."""
+        """Every task for this pet: explicit tasks plus medication doses.
+
+        All tasks are linked back to the pet so the scheduler and UI can group
+        by pet.
+        """
         tasks: list[Task] = []
+        for task in self.tasks:
+            task.pet = self
+            tasks.append(task)
         for med in self.medications:
             for task in med.generate_tasks():
                 task.pet = self
@@ -143,9 +156,11 @@ class Task:
         return self.fixed_time is not None and not self.is_flexible
 
     def mark_complete(self) -> None:
+        """Mark this task as done."""
         self.completed = True
 
     def mark_incomplete(self) -> None:
+        """Mark this task as not yet done."""
         self.completed = False
 
 
